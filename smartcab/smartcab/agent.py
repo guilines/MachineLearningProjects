@@ -65,20 +65,8 @@ class LearningAgent(Agent):
         deadline = self.env.get_deadline(self)  # Remaining deadline
         self.waypoint = waypoint
 
-        # Instead of returning a tuple, i'm returning an alias to this tuple. 
-        # I found this easier to debug and to understand the code, once printing
-        # the Q table with all the state values were not efficient.
-        # I kept this way. Removing this alias should cause no problem.
-
         inputs.pop('right') # Discarding the 'right' key
         state = (waypoint, str(inputs))
-        tmp = str(state)
-        
-        if tmp not in self.statesList:
-            state = 'state_' + str(len(self.statesList))
-            self.statesList.append(tmp)
-        else:
-            state = 'state_' + str(self.statesList.index(tmp))
 
         return state
 
