@@ -2,579 +2,453 @@
 | State-action rewards from Q-Learning
 \-----------------------------------------
 
-state_39
- -- forward : -9.08
- -- right : 1.13
- -- None : 1.60
- -- left : -38.21
-
-state_38
- -- forward : 0.82
- -- right : 0.25
- -- None : -4.98
- -- left : -19.80
-
-state_37
- -- forward : -11.78
- -- right : 0.14
- -- None : 1.62
- -- left : -16.93
-
-state_36
- -- forward : 0.16
- -- right : 2.24
- -- None : 0.91
- -- left : 0.20
-
-state_35
- -- forward : 1.10
+('forward', "{'light': 'red', 'oncoming': 'right', 'left': 'right'}")
+ -- forward : 0.00
  -- right : 0.00
- -- None : -3.22
- -- left : -10.42
+ -- None : 0.00
+ -- left : -19.68
 
-state_34
- -- forward : -10.21
- -- right : 0.88
- -- None : 1.96
- -- left : -9.72
+('left', "{'light': 'red', 'oncoming': None, 'left': None}")
+ -- forward : -9.43
+ -- right : -0.04
+ -- None : 1.22
+ -- left : -4.70
 
-state_33
- -- forward : -5.19
- -- right : 0.31
+('left', "{'light': 'green', 'oncoming': 'left', 'left': None}")
+ -- forward : 0.71
+ -- right : 0.01
+ -- None : 0.41
+ -- left : 2.13
+
+('right', "{'light': 'red', 'oncoming': None, 'left': 'forward'}")
+ -- forward : -19.86
+ -- right : -15.14
+ -- None : 0.00
+ -- left : -30.54
+
+('left', "{'light': 'red', 'oncoming': 'left', 'left': 'left'}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -4.76
+
+('right', "{'light': 'red', 'oncoming': 'forward', 'left': None}")
+ -- forward : -4.86
+ -- right : 2.18
+ -- None : 0.00
+ -- left : -4.94
+
+('left', "{'light': 'green', 'oncoming': 'left', 'left': 'left'}")
+ -- forward : 0.16
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+('forward', "{'light': 'red', 'oncoming': None, 'left': None}")
+ -- forward : -11.64
+ -- right : 0.39
+ -- None : 1.72
+ -- left : -13.73
+
+('forward', "{'light': 'green', 'oncoming': 'right', 'left': None}")
+ -- forward : 0.00
+ -- right : 0.70
+ -- None : -2.27
+ -- left : -9.87
+
+('right', "{'light': 'green', 'oncoming': 'left', 'left': None}")
+ -- forward : 0.01
+ -- right : 2.14
+ -- None : 0.16
+ -- left : 0.23
+
+('left', "{'light': 'green', 'oncoming': 'forward', 'left': None}")
+ -- forward : 0.85
+ -- right : -0.13
+ -- None : 0.00
+ -- left : -14.97
+
+('forward', "{'light': 'red', 'oncoming': 'left', 'left': 'forward'}")
+ -- forward : -19.88
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+('left', "{'light': 'green', 'oncoming': None, 'left': 'forward'}")
+ -- forward : 0.60
+ -- right : 0.30
+ -- None : 0.00
+ -- left : 1.40
+
+('forward', "{'light': 'red', 'oncoming': 'left', 'left': 'right'}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : -14.93
+
+('forward', "{'light': 'red', 'oncoming': 'right', 'left': None}")
+ -- forward : 0.00
+ -- right : 0.67
+ -- None : 0.00
+ -- left : 0.00
+
+('left', "{'light': 'green', 'oncoming': 'right', 'left': None}")
+ -- forward : 0.00
+ -- right : 0.05
+ -- None : 0.00
+ -- left : -10.10
+
+('right', "{'light': 'red', 'oncoming': 'left', 'left': 'left'}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+('right', "{'light': 'red', 'oncoming': 'right', 'left': None}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.99
+ -- left : -19.81
+
+('forward', "{'light': 'green', 'oncoming': 'left', 'left': 'right'}")
+ -- forward : 0.00
+ -- right : 0.51
+ -- None : 0.00
+ -- left : 0.00
+
+('right', "{'light': 'red', 'oncoming': None, 'left': None}")
+ -- forward : -22.08
+ -- right : 0.42
+ -- None : 1.45
+ -- left : -20.37
+
+('left', "{'light': 'red', 'oncoming': None, 'left': 'left'}")
+ -- forward : -12.71
+ -- right : 0.34
+ -- None : 2.12
+ -- left : -4.94
+
+('forward', "{'light': 'red', 'oncoming': 'forward', 'left': None}")
+ -- forward : -5.09
+ -- right : 1.19
+ -- None : 0.00
+ -- left : 0.00
+
+('left', "{'light': 'red', 'oncoming': 'left', 'left': 'right'}")
+ -- forward : 0.00
+ -- right : 0.21
+ -- None : 0.00
+ -- left : 0.00
+
+('forward', "{'light': 'green', 'oncoming': None, 'left': None}")
+ -- forward : 1.61
+ -- right : 0.60
+ -- None : -4.19
+ -- left : 0.63
+
+('right', "{'light': 'red', 'oncoming': 'left', 'left': 'right'}")
+ -- forward : -4.66
+ -- right : 0.00
+ -- None : 1.29
+ -- left : 0.00
+
+('right', "{'light': 'red', 'oncoming': 'forward', 'left': 'right'}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.31
+ -- left : 0.00
+
+('right', "{'light': 'red', 'oncoming': 'forward', 'left': 'forward'}")
+ -- forward : -19.71
+ -- right : -9.83
+ -- None : 0.00
+ -- left : 0.00
+
+('left', "{'light': 'green', 'oncoming': 'right', 'left': 'right'}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+('right', "{'light': 'green', 'oncoming': None, 'left': None}")
+ -- forward : 0.26
+ -- right : 1.46
+ -- None : -4.11
+ -- left : 0.97
+
+('left', "{'light': 'green', 'oncoming': None, 'left': 'right'}")
+ -- forward : 1.31
+ -- right : 0.00
+ -- None : -2.50
+ -- left : 0.00
+
+('left', "{'light': 'red', 'oncoming': 'right', 'left': None}")
+ -- forward : -4.91
+ -- right : 0.20
+ -- None : 0.00
+ -- left : -19.92
+
+('forward', "{'light': 'red', 'oncoming': None, 'left': 'left'}")
+ -- forward : -4.77
+ -- right : 0.09
+ -- None : 0.00
+ -- left : 0.00
+
+('forward', "{'light': 'green', 'oncoming': 'forward', 'left': 'forward'}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+('right', "{'light': 'red', 'oncoming': 'left', 'left': None}")
+ -- forward : -4.56
+ -- right : 0.00
+ -- None : 1.19
+ -- left : 0.00
+
+('right', "{'light': 'green', 'oncoming': 'left', 'left': 'forward'}")
+ -- forward : 0.00
+ -- right : 1.84
+ -- None : 0.00
+ -- left : 0.00
+
+('forward', "{'light': 'red', 'oncoming': 'left', 'left': 'left'}")
+ -- forward : -20.37
+ -- right : 0.57
+ -- None : 0.00
+ -- left : 0.00
+
+('left', "{'light': 'red', 'oncoming': 'left', 'left': 'forward'}")
+ -- forward : 0.00
+ -- right : -9.53
+ -- None : 0.00
+ -- left : 0.00
+
+('forward', "{'light': 'green', 'oncoming': 'left', 'left': 'forward'}")
+ -- forward : 0.00
+ -- right : -0.07
+ -- None : 0.00
+ -- left : 0.00
+
+('left', "{'light': 'red', 'oncoming': 'forward', 'left': 'forward'}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.53
+ -- left : 0.00
+
+('right', "{'light': 'green', 'oncoming': None, 'left': 'forward'}")
+ -- forward : 0.48
+ -- right : 1.31
+ -- None : 0.00
+ -- left : 0.00
+
+('forward', "{'light': 'red', 'oncoming': 'left', 'left': None}")
+ -- forward : -19.50
+ -- right : 0.00
+ -- None : 1.94
+ -- left : -9.10
+
+('right', "{'light': 'green', 'oncoming': None, 'left': 'right'}")
+ -- forward : 0.38
+ -- right : 0.00
+ -- None : -2.36
+ -- left : 0.00
+
+('right', "{'light': 'green', 'oncoming': None, 'left': 'left'}")
+ -- forward : 0.90
+ -- right : 0.00
+ -- None : -2.33
+ -- left : -0.23
+
+('right', "{'light': 'red', 'oncoming': None, 'left': 'left'}")
+ -- forward : 0.00
+ -- right : 1.63
+ -- None : 2.17
+ -- left : 0.00
+
+('forward', "{'light': 'green', 'oncoming': 'right', 'left': 'left'}")
+ -- forward : 1.11
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+('left', "{'light': 'red', 'oncoming': 'right', 'left': 'left'}")
+ -- forward : -4.57
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+('forward', "{'light': 'green', 'oncoming': 'forward', 'left': None}")
+ -- forward : 0.00
+ -- right : 0.40
+ -- None : -2.53
+ -- left : -9.86
+
+('left', "{'light': 'red', 'oncoming': None, 'left': 'right'}")
+ -- forward : -5.49
+ -- right : 0.00
+ -- None : 0.48
+ -- left : 0.00
+
+('right', "{'light': 'green', 'oncoming': 'right', 'left': 'left'}")
+ -- forward : 0.00
+ -- right : 1.38
+ -- None : 0.00
+ -- left : -9.97
+
+('forward', "{'light': 'green', 'oncoming': None, 'left': 'forward'}")
+ -- forward : 1.72
+ -- right : 0.77
+ -- None : -2.51
+ -- left : 0.00
+
+('forward', "{'light': 'green', 'oncoming': None, 'left': 'left'}")
+ -- forward : 1.21
+ -- right : 0.00
+ -- None : -4.04
+ -- left : 0.35
+
+('right', "{'light': 'green', 'oncoming': 'forward', 'left': 'left'}")
+ -- forward : 0.19
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+('forward', "{'light': 'red', 'oncoming': 'forward', 'left': 'right'}")
+ -- forward : -5.43
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+('left', "{'light': 'green', 'oncoming': None, 'left': 'left'}")
+ -- forward : 0.00
+ -- right : 0.08
+ -- None : -2.31
+ -- left : 1.93
+
+('forward', "{'light': 'green', 'oncoming': 'left', 'left': 'left'}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+('left', "{'light': 'red', 'oncoming': 'left', 'left': None}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 2.34
+ -- left : 0.00
+
+('forward', "{'light': 'red', 'oncoming': None, 'left': 'right'}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+('left', "{'light': 'green', 'oncoming': 'left', 'left': 'forward'}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.26
+ -- left : 0.00
+
+('right', "{'light': 'red', 'oncoming': 'left', 'left': 'forward'}")
+ -- forward : 0.00
+ -- right : -10.35
+ -- None : 0.00
+ -- left : -20.13
+
+('forward', "{'light': 'green', 'oncoming': 'left', 'left': None}")
+ -- forward : 2.24
+ -- right : -0.00
+ -- None : 0.07
+ -- left : 0.26
+
+('left', "{'light': 'green', 'oncoming': 'forward', 'left': 'left'}")
+ -- forward : 0.00
+ -- right : 0.60
+ -- None : -2.75
+ -- left : 0.00
+
+('forward', "{'light': 'green', 'oncoming': None, 'left': 'right'}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+('forward', "{'light': 'green', 'oncoming': 'right', 'left': 'forward'}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
+
+('right', "{'light': 'green', 'oncoming': 'forward', 'left': 'forward'}")
+ -- forward : 0.00
+ -- right : 1.28
+ -- None : 0.00
+ -- left : 0.00
+
+('right', "{'light': 'red', 'oncoming': 'forward', 'left': 'left'}")
+ -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.10
+ -- left : 0.00
+
+('left', "{'light': 'red', 'oncoming': None, 'left': 'forward'}")
+ -- forward : 0.00
+ -- right : 0.00
  -- None : 0.92
  -- left : 0.00
 
-state_32
- -- forward : 1.66
- -- right : 0.98
- -- None : -4.80
- -- left : 0.00
-
-state_31
- -- forward : 0.44
- -- right : 1.52
- -- None : -4.93
- -- left : -20.13
-
-state_30
- -- forward : -5.01
- -- right : 0.30
- -- None : 1.47
- -- left : 0.00
-
-state_88
- -- forward : -30.01
+('left', "{'light': 'green', 'oncoming': 'right', 'left': 'forward'}")
+ -- forward : -0.33
  -- right : 0.00
- -- None : 1.65
- -- left : 0.00
-
-state_89
- -- forward : -7.63
- -- right : 2.19
- -- None : 0.00
- -- left : -5.43
-
-state_82
- -- forward : -4.64
- -- right : 1.51
- -- None : 1.00
- -- left : -5.03
-
-state_83
- -- forward : 0.65
- -- right : 1.03
- -- None : -2.76
- -- left : 0.00
-
-state_80
- -- forward : 1.66
- -- right : 0.00
- -- None : 0.00
- -- left : -9.63
-
-state_81
- -- forward : 0.65
- -- right : 2.00
- -- None : 0.48
- -- left : 0.20
-
-state_86
- -- forward : 1.60
- -- right : 0.00
- -- None : -3.62
- -- left : 0.00
-
-state_87
- -- forward : 0.00
- -- right : 0.83
- -- None : -2.49
- -- left : -17.22
-
-state_84
- -- forward : 0.00
- -- right : 2.00
- -- None : 0.00
- -- left : 0.00
-
-state_85
- -- forward : 0.00
- -- right : 0.85
  -- None : 0.00
  -- left : -10.34
 
-state_15
- -- forward : -31.65
- -- right : 2.00
- -- None : 1.09
- -- left : -17.85
+('left', "{'light': 'red', 'oncoming': 'forward', 'left': None}")
+ -- forward : -4.95
+ -- right : 0.12
+ -- None : 1.55
+ -- left : -7.38
 
-state_14
- -- forward : 1.56
- -- right : 1.01
- -- None : -4.52
- -- left : 0.19
-
-state_17
- -- forward : 1.87
- -- right : 0.62
- -- None : 1.13
- -- left : 0.85
-
-state_16
- -- forward : 2.03
- -- right : 0.00
- -- None : -2.46
- -- left : -19.44
-
-state_11
- -- forward : 1.65
- -- right : 0.51
- -- None : 0.88
- -- left : -0.04
-
-state_10
- -- forward : 2.11
- -- right : 0.04
- -- None : -5.39
- -- left : 0.74
-
-state_13
- -- forward : 1.94
- -- right : 1.17
- -- None : -4.25
- -- left : 0.54
-
-state_12
- -- forward : -0.13
- -- right : 1.79
- -- None : -3.60
- -- left : 0.48
-
-state_19
- -- forward : 0.20
- -- right : 1.68
- -- None : -4.28
- -- left : 0.33
-
-state_18
- -- forward : 0.33
- -- right : 1.75
- -- None : -5.28
- -- left : 1.18
-
-state_95
- -- forward : 0.00
- -- right : 1.92
- -- None : -4.10
- -- left : -9.53
-
-state_94
- -- forward : 0.00
- -- right : 0.92
- -- None : 0.00
- -- left : 0.00
-
-state_91
- -- forward : 0.76
- -- right : 0.14
- -- None : 0.30
- -- left : 0.00
-
-state_90
- -- forward : 0.00
- -- right : 1.05
- -- None : 0.00
- -- left : -20.01
-
-state_93
- -- forward : 0.00
- -- right : 2.12
- -- None : 0.00
- -- left : 0.00
-
-state_92
- -- forward : 0.00
- -- right : 1.37
- -- None : -2.00
- -- left : 0.00
-
-state_60
- -- forward : 2.07
- -- right : 0.01
- -- None : 0.00
- -- left : -10.16
-
-state_61
- -- forward : -5.19
- -- right : -0.07
- -- None : 2.57
- -- left : -7.10
-
-state_62
- -- forward : 1.77
- -- right : 1.20
- -- None : 0.99
- -- left : 1.20
-
-state_63
- -- forward : -37.45
- -- right : -15.13
- -- None : 1.67
- -- left : -29.78
-
-state_64
+('left', "{'light': 'red', 'oncoming': 'right', 'left': 'forward'}")
  -- forward : 0.00
  -- right : 0.00
- -- None : -2.77
- -- left : -10.19
-
-state_65
- -- forward : 0.85
- -- right : 0.00
  -- None : 0.00
- -- left : -9.74
-
-state_66
- -- forward : 1.17
- -- right : 0.85
- -- None : -3.05
- -- left : -10.37
-
-state_67
- -- forward : 0.00
- -- right : 0.77
- -- None : 0.51
  -- left : 0.00
 
-state_68
+('left', "{'light': 'green', 'oncoming': 'left', 'left': 'right'}")
  -- forward : 0.00
- -- right : 0.00
- -- None : 1.50
- -- left : -7.88
-
-state_69
- -- forward : 0.66
- -- right : 1.57
+ -- right : 0.15
  -- None : 0.00
- -- left : -0.08
-
-state_73
- -- forward : -25.16
- -- right : 1.35
- -- None : 0.00
- -- left : -7.33
-
-state_72
- -- forward : 1.09
- -- right : 0.28
- -- None : -4.18
  -- left : 0.00
 
-state_71
- -- forward : -30.40
- -- right : -10.40
- -- None : 0.00
- -- left : -35.04
-
-state_70
- -- forward : 0.51
- -- right : 0.00
- -- None : 0.00
- -- left : -10.45
-
-state_77
+('forward', "{'light': 'red', 'oncoming': None, 'left': 'forward'}")
  -- forward : 0.00
- -- right : -18.78
- -- None : 1.39
+ -- right : -15.28
+ -- None : 1.43
  -- left : 0.00
 
-state_76
- -- forward : -7.87
- -- right : 0.13
- -- None : 1.50
- -- left : -9.64
+('right', "{'light': 'green', 'oncoming': 'forward', 'left': None}")
+ -- forward : 0.08
+ -- right : 0.00
+ -- None : 0.00
+ -- left : 0.00
 
-state_75
+('left', "{'light': 'red', 'oncoming': 'forward', 'left': 'left'}")
  -- forward : 0.00
+ -- right : 0.00
+ -- None : 1.16
+ -- left : 0.00
+
+('left', "{'light': 'green', 'oncoming': None, 'left': None}")
+ -- forward : 0.61
  -- right : 0.43
- -- None : 0.00
- -- left : -19.80
+ -- None : -4.27
+ -- left : 1.57
 
-state_74
- -- forward : 1.94
+('right', "{'light': 'green', 'oncoming': 'right', 'left': None}")
+ -- forward : 0.00
  -- right : 0.88
  -- None : 0.00
- -- left : 0.90
-
-state_79
- -- forward : -30.44
- -- right : 1.15
- -- None : 0.61
- -- left : 0.00
-
-state_78
- -- forward : -19.60
- -- right : -10.05
- -- None : 0.00
- -- left : -19.96
-
-state_46
- -- forward : -20.12
- -- right : -14.94
- -- None : 0.79
- -- left : 0.00
-
-state_47
- -- forward : 0.85
- -- right : 1.29
- -- None : -4.49
- -- left : -15.50
-
-state_44
- -- forward : -9.68
- -- right : 0.74
- -- None : 2.18
- -- left : -13.76
-
-state_45
- -- forward : 0.49
- -- right : 0.74
- -- None : -5.47
- -- left : 1.31
-
-state_42
- -- forward : 1.32
- -- right : 0.00
- -- None : -4.02
- -- left : 0.00
-
-state_43
- -- forward : 0.00
- -- right : 0.40
- -- None : 0.54
- -- left : 2.35
-
-state_40
- -- forward : 0.00
- -- right : 0.92
- -- None : 2.06
- -- left : -5.49
-
-state_41
- -- forward : -37.60
- -- right : -18.87
- -- None : 1.64
- -- left : -39.70
-
-state_48
- -- forward : -5.29
- -- right : 0.91
- -- None : 1.79
- -- left : -7.22
-
-state_49
- -- forward : 1.44
- -- right : 1.11
- -- None : -4.40
- -- left : -19.70
-
-state_9
- -- forward : 0.77
- -- right : 1.35
- -- None : 0.43
- -- left : 1.30
-
-state_8
- -- forward : -10.56
- -- right : 1.00
- -- None : 1.95
- -- left : -10.68
-
-state_1
- -- forward : -9.47
- -- right : 2.04
- -- None : 1.43
- -- left : -9.90
-
-state_0
- -- forward : -5.36
- -- right : 0.00
- -- None : 1.61
- -- left : -29.91
-
-state_3
- -- forward : 0.71
- -- right : 1.51
- -- None : 0.53
- -- left : 0.74
-
-state_2
- -- forward : -9.87
- -- right : 1.31
- -- None : 1.83
- -- left : -9.35
-
-state_5
- -- forward : 1.73
- -- right : 1.17
- -- None : -5.48
- -- left : 1.37
-
-state_4
- -- forward : 0.00
- -- right : 0.00
- -- None : 1.86
- -- left : 0.00
-
-state_7
- -- forward : 0.96
- -- right : 0.45
- -- None : -5.33
- -- left : 2.34
-
-state_6
- -- forward : -10.19
- -- right : 1.29
- -- None : 1.63
- -- left : -10.37
-
-state_59
- -- forward : -14.76
- -- right : 0.00
- -- None : 1.60
- -- left : -30.24
-
-state_58
- -- forward : -7.70
- -- right : 0.77
- -- None : 1.27
- -- left : -8.52
-
-state_51
- -- forward : -9.61
- -- right : 1.47
- -- None : 1.34
- -- left : -29.67
-
-state_50
- -- forward : 0.00
- -- right : 0.54
- -- None : 0.00
- -- left : 0.00
-
-state_53
- -- forward : -4.94
- -- right : 0.33
- -- None : 1.72
- -- left : -29.73
-
-state_52
- -- forward : 1.12
- -- right : 1.90
- -- None : -4.84
- -- left : 0.58
-
-state_55
- -- forward : -9.79
- -- right : 2.43
- -- None : 1.17
- -- left : -9.77
-
-state_54
- -- forward : 0.00
- -- right : -9.71
- -- None : 0.00
- -- left : -19.95
-
-state_57
- -- forward : -23.60
- -- right : 1.28
- -- None : 1.08
- -- left : -5.40
-
-state_56
- -- forward : 0.72
- -- right : 0.00
- -- None : -2.87
- -- left : 1.61
-
-state_28
- -- forward : 0.97
- -- right : 0.29
- -- None : -4.39
- -- left : 1.48
-
-state_29
- -- forward : -10.97
- -- right : 0.00
- -- None : 1.43
- -- left : -4.78
-
-state_24
- -- forward : -10.09
- -- right : 0.78
- -- None : 1.88
- -- left : -9.84
-
-state_25
- -- forward : -39.88
- -- right : -19.31
- -- None : 2.26
- -- left : -39.76
-
-state_26
- -- forward : -13.82
- -- right : 0.27
- -- None : 1.30
- -- left : -17.23
-
-state_27
- -- forward : 1.03
- -- right : 0.17
- -- None : -5.05
- -- left : -19.73
-
-state_20
- -- forward : -19.67
- -- right : 2.15
- -- None : 0.99
- -- left : -9.66
-
-state_21
- -- forward : -35.33
- -- right : -9.70
- -- None : 2.35
- -- left : -19.67
-
-state_22
- -- forward : -9.95
- -- right : 1.10
- -- None : 1.85
- -- left : -9.59
-
-state_23
- -- forward : -39.01
- -- right : -18.72
- -- None : 1.20
- -- left : -40.22
+ -- left : -10.29
 

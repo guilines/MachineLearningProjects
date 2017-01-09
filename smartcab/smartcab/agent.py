@@ -23,6 +23,7 @@ class LearningAgent(Agent):
         self.waypoint = None     # Saves the waypoint
         self.statesList = list() # List that contains the tuples of all states
         self.t = 1               # t = number of trials
+        self.optimized = True   # Just to discard alpha and function changes of the optimized mode
         
 
     def reset(self, destination=None, testing=False):
@@ -33,21 +34,12 @@ class LearningAgent(Agent):
         # Select the destination as the new location to route to
         self.planner.route_to(destination)
         
-        if self.alpha <= 0:
-            self.epsilon = self.epsilon - 0.005
+        if not self.optimized:
+            self.epsilon = self.epsilon - 0.05
         else:
             self.epsilon = math.exp(-self.alpha*self.t)
             self.t = self.t+1
         
-        if self.epsilon < 0:
-            self.epsilon = 0
-        elif self.epsilon > 1:
-            self.epsilon = 1
-        if self.alpha < 0:
-            self.alpha = 0
-        elif self.alpha > 1:
-            self.alpha = 1
-
         if testing:
             self.epsilon = 0
             self.alpha = 0
@@ -104,11 +96,6 @@ class LearningAgent(Agent):
         self.next_waypoint = self.planner.next_waypoint()
         action = None
 
-        # possible_actions might contain a list with possibles action to take
-        # if they have the same high Q-Value. In this condition, if available,
-        # the action that leads direct to the waypoint will be taken, otherwise,
-        # a random action will be choosen
-
         possible_actions = list()
         if not self.learning:
             action = random.choice(self.valid_actions)
@@ -119,13 +106,8 @@ class LearningAgent(Agent):
                 for act in self.valid_actions:
                     possible_actions = [key for key in self.Q[state].keys() 
                                         if self.Q[state][key]==max(self.Q[state].values())]
-                if not len(possible_actions):
-                    action = self.waypoint
-                else:
-                    if self.waypoint in possible_actions:
-                        action = self.waypoint
-                    else:
-                        action = random.choice(possible_actions)
+
+                    action = random.choice(possible_actions)
  
         return action
 
@@ -174,6 +156,7 @@ def run():
     #    * epsilon - continuous value for the exploration factor, default is 1
     #    * alpha   - continuous value for the learning rate, default is 0.5
     agent = env.create_agent(LearningAgent,learning=True,alpha=0.0045)
+    #agent = env.create_agent(LearningAgent,learning=True)
     
     ##############
     # Follow the driving agent
@@ -195,7 +178,7 @@ def run():
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05 
     #   n_test     - discrete number of testing trials to perform, default is 0
-    sim.run(n_test=10)
+    sim.run(n_test=20)
 
 
 if __name__ == '__main__':
