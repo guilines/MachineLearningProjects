@@ -18,74 +18,71 @@
 
 
 \section*{Domain Background}
-Put your Problem statement here! Example of a Citation\cite[p.219]{Robotics}. Here's Another Citation\cite{Flueck}
-
-(approx. 1-2 paragraphs) \\
-In this section, provide brief details on the background information of the domain from which the project is proposed. 
-Historical information relevant to the project should be included. 
-It should be clear how or why a problem in the domain can or should be solved. 
-Related academic research should be appropriately cited in this section, including why that research is relevant. 
-Additionally, a discussion of your personal motivation for investigating a particular problem in the domain is encouraged but not required.
+The future value of a company stock over a period might be predictable, and the technique developed to do so is known as \emph{Stock Market prediction}\cite{Wiki}. 
+Given some metrics over a period, such as opening stock price, volume of stocks traded and highest stock price traded, predictions can be done using an algorithm.
+The analyses of all possible inputs are done in order to predict the Adjusted Close stock price, in other words, the future value of the company.
+\newline
+\\
+Accurate future value prediction is an objective pursued by many companies. This project will not be sensible to all data available, trying to perform data-mining in twitter and other tools to predict if a company will have a drastically rise/fall on their stock price.
+I intend to investigate the financial market, understanding how it works and the variables responsible of its changes, not to create the best predictive tool on the market. \\ 
 
 
 \section*{Problem Statement}
-(approx. 1 paragraph) \\
-In this section, clearly describe the problem that is to be solved. 
-The problem described should be well defined and should have at least one relevant potential solution. 
-Additionally, describe the problem thoroughly such that it is clear that the problem is quantifiable (the problem can be expressed in mathematical or logical terms) , measurable (the problem can be measured by some metric and clearly observed), and replicable (the problem can be reproduced and occurs more than once).
+Some tools, available on-line and with no costs, provide a significant amount of information about the stock market. Thus, historical information can be downloaded about it in order to analyze  how the stock price of a company behaved over the past years.
+All the data available is based on dates and prices, and is therefore quantifiable, measurable and replicable, given that data from the past can be analyzed.
+To sum up: The problem stated is to determine the \emph{adjusted close stock price}, and it will be done through an analysis of historical and recent data from stock values.\\ 
+
 
 \section*{Datasets and Inputs}
-(approx. 2-3 paragraphs) \\
-In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. 
-Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, should be included with relevant references and citations as necessary. 
-It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
+All data will be achieved on-line by a free open source. Firstly, the \emph{Yahoo! Finance} tool will be used. There is a module available for python to get the data on https://pypi.python.org/pypi/yahoo-finance .
+There is a list of available methods implemented by the \emph{Yahoo! Finance} tool that will provide all the inputs needed for this project, at least in the initial part of the project. If the algorithm requires some
+new data, it will be described on the final report.\\
+\newline 
+\\
+The data achieved from the \emph{Yahoo! Finance} will be stored in a local database system, such as \emph{sqLite}, to prevent downloading always the same data and in order to analyze the data off-line.
+The inputs that will be used at first are: \emph{Volume} stock trading, \emph{Open} stock value, \emph{Low} stock price, \emph{High} stock price, \emph{Close} stock price and the \emph{Adjusted Close} stock price.\\
 
 \section*{Solution Statement}
-(approx. 1 paragraph) \\
-In this section, clearly describe a solution to the problem. 
-The solution should be applicable to the project domain and appropriate for the dataset(s) or input(s) given. 
-Additionally, describe the solution thoroughly such that it is clear that the solution is quantifiable (the solution can be expressed in mathematical or logical terms) , measurable (the solution can be measured by some metric and clearly observed), and replicable (the solution can be reproduced and occurs more than once).
-
+As listed in \emph{Datasets and Inputs}, the solution is to analyze all the input data, which are 5, and by their behavior predict the  \emph{Adjusted Close} price.
+The challenge here might be to find the ideal period to perform the analysis, since there are many variables that might affect its behavior, such as a Market crisis.
+A supervised learning algorithm will be applied in order to achieve the result.
 
 \section*{Benchmark Model}
-(approximately 1-2 paragraphs) \\
-In this section, provide the details for a benchmark model or result that relates to the domain, problem statement, and intended solution.
-Ideally, the benchmark model or result contextualizes existing methods or known information in the domain and problem given, which could then be objectively compared to the solution. 
-Describe how the benchmark model or result is measurable (can be measured by some metric and clearly observed) with thorough detail.
-
+The result can be easily evaluated, since it will be quantifiable and compared to the already existing value. Therefore, the evaluation of the success of the model can be done by comparing the final
+predicted value of the \emph{Adjusted Stock price} with the real one.\\
 
 \section*{Evaluation Metrics}
-(approx. 1-2 paragraphs) \\
-In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model.
-The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution.
-Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if applicable).
-Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
-
-
+The evaluation will compare the stock price estimated with the one achieved. Therefore, an evaluation metric as $R^2 Score$ should be a good fit to this. 
+The $R^2 score$ is a statistical measure of the closeness between the data and the fitted regression line \cite{R2}. The result will be between 0 and 1, where 0 indicating that the model doesn't explain 
+the data, and 1 indicating that the model completely explains the data.\\
 
 \section*{Project Design}
-(approx. 1 page) \\
-In this final section, summarize a theoretical workflow for approaching a solution given the problem. 
-Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation.
-The workflow and discussion that you provide should align with the qualities of the previous sections. 
-Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required.
-The discussion should clearly outline your intended workflow of the capstone project.
-
-
-
-\section*{Attachments}
-   \begin{itemize}
-       \item Does the proposal you have written follow a well-organized structure similar to that of the project template?
-       \item Is each section (particularly Solution Statement and Project Design) written in a clear, concise and specific fashion? Are there any ambiguous terms or phrases that need clarification?
-       \item Would the intended audience of your project be able to understand your proposal?
-       \item Have you properly proofread your proposal to assure there are minimal grammatical and spelling mistakes?
-       \item Are all the resources used for this project correctly cited and referenced?
-   \end{itemize} 
+This project is designed to be developed in three parts. The first one consists of an algorithm responsible of archiving the data, given a company name and a period, and will store all the data in a database. This algorithm is essential to future improvements on the code, such as 
+ adding new features. Organizing it in a database, such as sqLite, will improve the performance of the application, allowing it to avoid archiving the data every time. Also, storing data in a database is better
+ than doing so in a file, since it is easily scalable and accessible. Therefore, it doesn't require lots of parsings over files.
+ \newline
+ \\
+ The second is an algorithm responsible of getting the data from the database and applying the selected predictive model. All the analyses will be done in this code. This algorithm will be coded in Python 2.7,
+ and it is intended to use \emph{TensorFlow} as a tool to create the model. Other tools, such as \emph{seaborn} will be used to analyze the results and write the report. 
+ \newline
+ \\
+ Then, an  interface to the user is intended to be provided. Depending on the time available after the implementation, a web framework could be used with  some solution with python's flask or Angular.js. 
+ \newline
+ \\
+Finally, the planned workflow intended to this project is the following:
+\begin{itemize}
+ \item Determine the tables' format  of the database.
+ \item Determine the period and companies that will be used to begin this project.
+ \item Code the algorithm responsible to download the data and store it in the database.
+ \item Analyze the data, understand it and find the principal components and/or the proper model.
+ \item Evaluate the results, plot it and start the report.
+ \item Develop an user interface.
+ \item Finalize the report
+\end{itemize}
 
 \begin{thebibliography}{9}
-\bibitem{Robotics} Fred G. Martin \emph{Robotics Explorations: A Hands-On Introduction to Engineering}. New Jersey: Prentice Hall.
-\bibitem{Flueck}  Flueck, Alexander J. 2005. \emph{ECE 100}[online]. Chicago: Illinois Institute of Technology, Electrical and Computer Engineering Department, 2005 [cited 30
-August 2005]. Available from World Wide Web: (http://www.ece.iit.edu/~flueck/ece100).
+\bibitem{Wiki} Wikipedia, Available from World Wide Web at (https://en.wikipedia.org/wiki/Stock\_market\_prediction), on 15/01/2017 
+\bibitem{R2} Minitab, Available from World Wide Web at (http://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit), on 15/01/2017.
 \end{thebibliography}
 
 \end{document}
