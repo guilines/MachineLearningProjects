@@ -44,12 +44,20 @@ The inputs that will be used at first are: \emph{Volume} stock trading, \emph{Op
 
 \section*{Solution Statement}
 As listed in \emph{Datasets and Inputs}, the solution is to analyze all the input data, which are 5, and by their behavior predict the  \emph{Adjusted Close} price.
-The challenge here might be to find the ideal period to perform the analysis, since there are many variables that might affect its behavior, such as a Market crisis.
-A supervised learning algorithm will be applied in order to achieve the result.
+The challenge here might be to find the ideal period to perform the analysis, since there are many variables that might affect its behavior, such as a Market crisis. One solution to this 
+could be performing the analyzes over a short period, as a couple of months, of a stable company, such as Apple.
+A supervised learning algorithm will be applied in order to achieve the result. Since the output of this solution will be continuous, a linear regression algorithm will be used.
+The algorithms available achieve a better accuracy depending of the size of data used and number of features. Some algorithms that will be implemented in a first time, in order to 
+evaluate its performance are: \emph{SGD Regressor, SVR(multiple kernels) and Ensemble Regressors}. As the solution becomes more defined and clear, some solutions with deep learning might
+be studied and implemented.\\
 
 \section*{Benchmark Model}
 The result can be easily evaluated, since it will be quantifiable and compared to the already existing value. Therefore, the evaluation of the success of the model can be done by comparing the final
-predicted value of the \emph{Adjusted Stock price} with the real one.\\
+predicted value of the \emph{Adjusted Stock price} with the real one. The benchmark value, considering the $R^2 score$ (next topic) to this project, that will be pursed initially will be of 0.5.
+However, a value of 0.5 to predict stock prices does not seems to be reliable, since you cannot evaluate if the value of the stock is rising or decreasing over a period. 
+Therefore, a reliable benchmark value to achieve when finishing this project would be around 0.8. With this value, the client using this software can interpret the values and decide if it is
+a good scenario or not to keep/buy/sell stocks from this company.
+\\
 
 \section*{Evaluation Metrics}
 The evaluation will compare the stock price estimated with the one achieved. Therefore, an evaluation metric as $R^2 Score$ should be a good fit to this. 
@@ -63,7 +71,8 @@ This project is designed to be developed in three parts. The first one consists 
  \newline
  \\
  The second is an algorithm responsible of getting the data from the database and applying the selected predictive model. All the analyses will be done in this code. This algorithm will be coded in Python 2.7,
- and it is intended to use \emph{TensorFlow} as a tool to create the model. Other tools, such as \emph{seaborn} will be used to analyze the results and write the report. 
+ and it is intended to use \emph{TensorFlow} as a tool to create the model. Other tools, such as \emph{seaborn} will be used to analyze the results and write the report. The use of the \emph{TensorFlow} instead
+ of \emph{sk-learn} is to learn a new tool with new solutions and to try to implement deep learning, after achieving the benchmark of 0.5.   
  \newline
  \\
  Then, an  interface to the user is intended to be provided. Depending on the time available after the implementation, a web framework could be used with  some solution with python's flask or Angular.js. 

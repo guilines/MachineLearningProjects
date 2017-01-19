@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2017.1.13)  16 JAN 2017 19:52
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2017.1.13)  18 JAN 2017 22:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -85,53 +85,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--44
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--53
+
+ []
+
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
-
- []
-
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 55.
+(Font)              <10.95> on input line 56.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 55.
+(Font)              <8> on input line 56.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 55.
+(Font)              <6> on input line 56.
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--58
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--73
+Underfull \hbox (badness 10000) in paragraph at lines 55--61
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--73
+Underfull \hbox (badness 10000) in paragraph at lines 63--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--73
+Underfull \hbox (badness 10000) in paragraph at lines 68--82
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 74.
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--82
+
+ []
+
+[2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 83.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
- [2]
-Overfull \hbox (60.28973pt too wide) in paragraph at lines 84--85
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 83.
+
+Overfull \hbox (60.28973pt too wide) in paragraph at lines 93--94
 []\OT1/cmr/m/n/10.95 Wikipedia, Avail-able from World Wide Web at (https://en.w
 ikipedia.org/wiki/Stock[]market[]prediction),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 \OT1/cmr/m/n/10.95 statistics-2/regression-analysis-how-do-i-interpret-r-square
 d-and-assess-the-goodness-of-fit),
  []
@@ -140,10 +147,10 @@ d-and-assess-the-goodness-of-fit),
 Here is how much of TeX's memory you used:
  495 strings out of 493638
  5951 string characters out of 6146796
- 158221 words of memory out of 5000000
+ 159221 words of memory out of 5000000
  3957 multiletter control sequences out of 15000+600000
  8243 words of font info for 29 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 21i,4n,19p,296b,171s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 21i,4n,19p,296b,144s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on proposal.pdf (3 pages).
