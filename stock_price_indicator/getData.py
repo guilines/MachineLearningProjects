@@ -4,6 +4,7 @@ import yahoo_finance as yhoo
 #Create SQL Table
 
 def create_tables(cur):
+    ''' Create tables if they does not exist'''
 
     cur.execute(''' CREATE TABLE IF NOT EXISTS Companies (
             id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, 
