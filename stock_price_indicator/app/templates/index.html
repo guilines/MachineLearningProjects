@@ -1,0 +1,91 @@
+$def with (form, text)
+
+<!doctype html>
+
+<html>
+
+    <head>
+        <title>Stock Prices Predictor</title>
+        
+        <!-- JQuery Files-->
+        <link type="text/css"href="static/widgets/jqwidgets/styles/jqx.base.css" rel="stylesheet"/>
+        <script type="text/javascript" src="static/widgets/scripts/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="static/widgets/jqwidgets/jqxcore.js"></script>
+        <script type="text/javascript" src="static/widgets/jqwidgets/jqxbuttons.js"></script>
+        <script type="text/javascript" src="static/widgets/jqwidgets/jqxradiobutton.js"></script>
+        <script type="text/javascript" src="static/widgets/jqwidgets/jqxscrollbar.js"></script>
+        <script type="text/javascript" src="static/widgets/jqwidgets/jqxtextarea.js"></script>
+        <script type="text/javascript" src="static/widgets/jqwidgets/jqxlistbox.js"></script>
+        <script type="text/javascript" src="static/widgets/jqwidgets/jqxdropdownlist.js"></script>
+        <script type="text/javascript" src="static/widgets/jqwidgets/jqxcalendar.js"></script>
+        <script type="text/javascript" src="static/widgets/jqwidgets/jqxloader.js"></script>       
+        <script type="text/javascript" src="static/widgets/jqwidgets/jqxnumberinput.js"></script>
+        <script type="text/javascript" src="static/widgets/jqwidgets/jqxdatetimeinput.js"></script>
+        <script type="text/javascript" src="static/widgets/jqwidgets/globalization/globalize.js"></script>
+
+        <!-- Google Charts   -->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <!-- Local Functions   -->
+        <script type="text/javascript" src="/static/methods.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/style.css" />
+
+    </head>
+    
+    <body>
+        <h1>Stock Prices Predictor</h1>
+        <br>
+
+        <div id="new_data">Use new data</div>
+        <div id="old_data">Use previous data</div>
+        <div id="new_data_div">
+            <h3>For the last:</h3>
+            <div id="select_companyPeriod"></div>
+        </div>
+        <div id="select_data_div">
+            <h3>Company Symbol:</h3>
+            <div id="select_symbol"></div>
+            <div id="companyLoader"></div>
+        </div>
+
+        <div id="company_values_chart_div">
+            <h3>Company values</h3>
+            <div id="company_values_str"></div>
+            <div id="company_values_chart"></div>
+        </div>
+
+        <div id="select_method_div">
+            <h3>Method to predict:</h3>
+            <div id="select_method"></div>
+            <div id="methodLoader"></div>
+        </div>
+
+        <div id="method_values_chart_div">
+            <h3>Method values</h3>
+            <div id="method_values_str"></div>
+            <div id="method_values_chart"></div>
+        </div>
+
+        <div id="select_period_div">
+            <h3>Days to predict:</h3>
+            <div id="select_period"></div>
+        </div>
+
+        <div id="pred_values_chart_div">
+            <h3>Prediction results:</h3>
+            <div id="pred_values_chart"></div>
+        </div>
+
+        <h3>Reset:</h3>
+        <div id="reset" value="Reset"></div>
+
+        <div id="results">
+        <h2>Results:</h2>
+            <h3>Predictor accuracy</h3>
+            <div id="pred_chart2"></div>
+            <h3>Prediction over selected period</h3>
+            <div id="pred_chart3"></div>
+        </div>
+    </body>
+    
+</html>
