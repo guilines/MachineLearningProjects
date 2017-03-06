@@ -29,13 +29,16 @@
     * Linux - Ubuntu 16.04 LTS
     * MacOS - El Capitan
 
-### To get python dependences:
+### To get python dependences on ubuntu:
 
-sudo pip install scikit-learn numpy scipy keras pysqlite yahoo-finance pandas simplejson matplotlib
+sudo pip install web.py scikit-learn numpy scipy tensorflow keras sqlalchemy pysqlite yahoo-finance pandas simplejson matplotlib
 
+### To get python dependences on MacOs:
+
+Some of the commands listed before will work. But to install tensorflow follow this: https://www.tensorflow.org/install/install_mac
 
 ## Executing the app:
-    * $ cd app/
-    * $ python app.py
+* $ cd app/
+* $ python app.py
 
-    * Open your browser on: 127.0.0.1:8080 (localhost:8080) 
+* Open your browser on: 127.0.0.1:8080 (localhost:8080) 
