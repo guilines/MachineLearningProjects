@@ -3,15 +3,15 @@
 
 \subsection{Data Preprocessing}
 The first step is to acquire the data. Using the \textit{Yahoo Finance} tool for python, the data is easily fetched with using the company stock symbol and the historical period. After
-it, an object containing the stock prices and some other informations will be acquired. In order to avoid fetching the same data everytime the code in run and to avoid store everything 
-on the RAM memory, there was developed a database to organize and store the data. This way, only new data will be fecthed and stored. This database is designed to store data for any number
+it, an object containing the stock prices and some other informations will be acquired. In order to avoid fetching the same data every time the code in run and to avoid store everything 
+on the RAM memory, there was developed a database to organize and store the data. This way, only new data will be fetched and stored. This database is designed to store data for any number
 of companies.\\
 \\
 The database was organized in three tables:
 \begin{itemize}
  \item \textbf{Companies:} Stores the Symbol and the Name of all listed companies.\\
  \item \textbf{Period:} Stores the period of the data stored of each company.\\
- \item \textbf{Data:} Store all the usefull data of all companies.\\
+ \item \textbf{Data:} Store all the useful data of all companies.\\
 \end{itemize}
 \ \\
 The Figure \ref{fig:db} shows the organization of the database.
@@ -23,30 +23,31 @@ The Figure \ref{fig:db} shows the organization of the database.
 \label{fig:db}
 \end{figure}
 \ \\
-With this process, the data need to be achieved before the processing. However, while the data from one company is being donwloaded into the database, the next algorithm can be performed
-to the data of a storaged company. Also, the data of all wished companies can be downloaded into the database before starting. The positive point about this, is that RAM memory is saved
+With this process, the data need to be achieved before the processing. However, while the data from one company is being downloaded into the database, the next algorithm can be performed
+to the data of a storage company. Also, the data of all wished companies can be downloaded into the database before starting. The positive point about this, is that RAM memory is saved
 by storing data in hard disk. However, this database can grow as the hard disk supports, therefore it is important to not try to download all the data from every company in the stock market.
 Once the data is organized in the database, the Preprocessing starts.\\
 \\
 Firstly, the all the data from the selected company, which, in this case, is from the \textit{NVS - Norvatis AG Common Stock}, will be loaded into the RAM memory. The tool used to perform it
-is the \textit{pandas}. It has a method that fetch data from a database and load it as a data framework. Once the data framwork object is created, the next step is to start the implementation 
+is the \textit{pandas}. It has a method that fetch data from a database and load it as a data framework. Once the data framework object is created, the next step is to start the implementation 
 of the machine learning code, since all data needed to work is ready to be used.\\
 \\
 
 
 \subsection{Implementation}
+\label{subsec:implementation}
 Given all the features available: \textit{Open, Close, High, Low , Volume and Adjustment Close Price}, the firs step is to define which data will be used. As studied in the Subsection \ref{subsec:Exploratory_visu},
-all the prices, except for the \textit{Volume}, are fully correlated. In order to see the results to start improving it, the only feature choosen was \textit{Adjustment Close Price}. However,
-just this feature cannot be used, there must be some feature denoting time. The date formated in year-month-day cannot be used. Therefore, a continuous time series for data was created. If 
-there was third days od data, from June/2016 to July/2016, this feature would be a sequence of third values, one to third.\\
+all the prices, except for the \textit{Volume}, are fully correlated. In order to see the results to start improving it, the only feature chosen was \textit{Adjustment Close Price}. However,
+just this feature cannot be used, there must be some feature denoting time. The date formatted in year-month-day cannot be used. Therefore, a continuous time series for data was created. If 
+there was third days of data, from June/2016 to July/2016, this feature would be a sequence of third values, one to third.\\
 \\
 Once all the data to be used was defined, the next step is to split the data into train and test data. The method utilized for this project was the sklearn \textit{train\_test\_split}. This method
 split arrays or matrices into random train and test subsets. The subset test was defined as 20\% of the whole data. This method of splitting is used to all algorithms in this code. Given the results
 achieved, this method was perfect for this project. However, implementing others, such as K-Fold, can be done. The whole code is modular and well defined. Which means that all the functions, such
-as achieve data, split data, predict data and others, are separeted and with fucntions well defined. Changing a method of splitting data would be as easy as changing the predict model.\\
+as achieve data, split data, predict data and others, are separated and with functions well defined. Changing a method of splitting data would be as easy as changing the predict model.\\
 \\
-As can be noticed on Figure \ref{fig:regression_map}, there are a lot of options of regression algorithms in sklearn library, and there are other libraries, such as Tensor Flow, that offers
-others solutions. Just considering the data available, was implemented in this project three different methods: Supoprt Vector Machine: Support Machine Regression (SVR), Ensemble: AdaBoosting Regression
+As can be noticed on Figure \ref{fig:regression_map}, there are a lot of options of regression algorithms in \textit{Sk-Learn} library, and there are other libraries, such as Tensor Flow, that offers
+others solutions. Just considering the data available, was implemented in this project three different methods: Support Vector Machine: Support Machine Regression (SVR), Ensemble: AdaBoosting Regression
 and Decision Trees: Decision Tree Regressor. It was implemented the default (without tuning) models and their $R^2 score$ was compared. All of them had some really good scores, that was higher
 than 0.9, which means: all of them could predict correctly in their test subset 90\% of the samples. Before implementing any tuning in the models, it is important to notice that: not all of them
 will work for this project. The predictions are made based on the days, which is a vector of sequential numbers. Decision Trees cannot perform a prediction with numbers that are not considered
@@ -58,10 +59,10 @@ kernel was the best fit. After it, all others parameters were left as variables 
 
 
 \subsection{Refinement}
-Before implementing any new method or algorithm, it was expended some energy to create an interface to visualize and interate with the process. In order to implement something simple
+Before implementing any new method or algorithm, it was expended some energy to create an interface to visualize and interact with the process. In order to implement something simple
 before moving to new high-end solutions, the solution was the framework python Web, with Javascript and HTML. The structure defined was: An algorithm in python responsible to launch the
-Web server and perform the back end of the project, which is achieve data and perform the predictions. The HTML is renderized by the python to be visualized, and the javascript is responsible
-to create the visual, graphics, interating with the HTML and Python. The visualization was defined in three steps: Select the company and the period, select the algorithm to be used and the period
+Web server and perform the back end of the project, which is achieve data and perform the predictions. The HTML is rendered by the python to be visualized, and the javascript is responsible
+to create the visual, graphics, interacting with the HTML and Python. The visualization was defined in three steps: Select the company and the period, select the algorithm to be used and the period
 that will be predicted.\\
 \\
 To the visual part of this web solution was used \textit{jQWidgtes}, that can be downloaded on http://www.jqwidgets.com/, and \textit{Google Charts}, that can be downloaded on https://developers.google.com/chart/ .
@@ -69,10 +70,10 @@ These frameworks were defined after previous experience using them. And this sol
 following three steps were defined:
 \begin{itemize}
  \item Choosing Company: A list of available companies symbols is listed in order to be chosen. After choosing one, the Figure \ref{fig:nvs_stock_results} is displayed. The objective of this
- visualization is to understading the stock prices over a period. This is just historical data, no preprocessing were made until this point. 
+ visualization is to understanding the stock prices over a period. This is just historical data, no preprocessing were made until this point. 
  \item Selecting Algorithm: A list of available algorithms is listed. After a choice is made, a graph is displayed presenting a comparison between the historical data and the result of the 
  prediction to all the data. In this step, when using the \textit{SVR} method, the pipeline algorithm will be used to find the best parameters. A box containing information about the regressor
  used and the $R^2 Score$ will be showed. Illustrated on Figure \ref{fig:predict_svr}.
  \item Select Period to predict: A list of available days to predict will be displayed. It will have options from one day to forty five days. When the period is selected, a graph will be displayed
- showing the behaviour of the stock prices over this period. Illustrated on Figure \ref{fig:predict_45days}.
+ showing the behavior of the stock prices over this period. Illustrated on Figure \ref{fig:predict_45days}.
 \end{itemize}
