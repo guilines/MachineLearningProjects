@@ -2,7 +2,10 @@ import web
 import simplejson as json
 import numpy as np
 import pandas
+import webbrowser
 from datetime import datetime, timedelta
+import matplotlib.pyplot as plt
+from pandas.tools.plotting import scatter_matrix
 
 import modules.get_data as getData
 import modules.predict_prices as predPrices
@@ -18,9 +21,7 @@ render = web.template.render('templates/')
 
 app = web.application(urls, globals())
 
-req = web.form.Form(
-                web.form.Textbox('', class_='textfield', id='textfield'),
-                )
+req = web.form.Form(web.form.Textbox('', class_='textfield', id='textfield'),)
 
 class messages:
     def GET(self):
@@ -52,23 +53,9 @@ def _reset(reqs):
     g_predObj = predPrices.PredStockPrices(DATABASE_PATH)
     return True
 
-    
-    
-    
-def _pred_test(reqs):
-    print 'Pred Test'
-    #reqs["symbol"] = 'APPL'
-    symbol = 'YHOO'
-    predObj = predPrices.PredStockPrices(DATABASE_PATH)
-    predObj.load_data(symbol)
-    df = predObj.get_df()
-    results = _get_company_values(df)
-
-    res = {}
-    res['chart1'] = results
-    return res
 
 def _update_values_chart(reqs):
+    ''' Function responsible to get/update data from a company.'''
     if 'period' in reqs.value:
         if not getData.updateData(DATABASE_PATH,reqs.value['symbol'],reqs.value['period']):
             return False
@@ -76,9 +63,12 @@ def _update_values_chart(reqs):
     predObj = predPrices.PredStockPrices(DATABASE_PATH)
     predObj.load_data(reqs.value['symbol'])
     df = predObj.get_df()
+    features = df.drop(df.columns[[0,1,2]], axis=1)
+    #_plots(features)
     return _get_company_values(df)
 
 def _get_company_values(df):
+    ''' Function responsible to reshape the data that will be used to plot.'''
     result = {}
     result['date'] =        df['date'].values.tolist()
     result['close_price'] = df['close'].values.tolist()
@@ -95,13 +85,11 @@ def _get_company_values(df):
     result['vStr'].append('Average price:<font color="green"> ${:,.2f}</font>'.format(np.average(result['adj_price'])))
     result['vStr'].append('Standart deviation of prices:<font color="green"> ${:,.2f}</font>'.format(np.std(result['adj_price'])))
 
-
-
     return result
 
 def _set_method(reqs):
+    ''' Function responsible to instance the class that will perform the prediction.'''
     global g_predObj
-    #predObj = predPrices.PredStockPrices()
     g_predObj.load_data(reqs.value['symbol'])
     g_predObj.set_method(reqs.value['method'])
     y_pred = g_predObj.get_pred()
@@ -126,14 +114,11 @@ def _set_method(reqs):
     result['vStr'].append('R2 Score:<font color="{}"> {}</font>'.format(color,r2_score))
     if params is not None:
         result['vStr'].append('Regressor:<font color="{}"> {}</font>'.format(color,params))
-
-    #print result['vStr']
-    #print y_pred
-    #print y_pred.shape
-    
+ 
     return result
 
 def _new_pred(reqs):
+    ''' Function responsible to use the trained regressor to predict future dates'''
     df = g_predObj.get_df()
     lenDate = len(df['date'])
     days = int(reqs.value['period'].split()[0])
@@ -153,8 +138,26 @@ def _new_pred(reqs):
     
     return result
 
-
+def _plots(features):
+    ''' Function responsible to display some plots. '''
+    fNames = list(features)
+    correlations = features.corr()
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    cax = ax.matshow(correlations, vmin=-1, vmax=1)
+    fig.colorbar(cax)
+    ticks = np.arange(0,len(fNames),1)
+    ax.set_xticks(ticks)
+    ax.set_yticks(ticks)
+    ax.set_xticklabels(list(fNames))
+    ax.set_yticklabels(list(fNames))
+    plt.title('Correlation')
+    scatter_matrix(features)
+    plt.show()
 
 if __name__ == '__main__':
+    print 'Server running on: 127.0.0.1:8080.'
+    #The next line opens a page in the default browser 
+    webbrowser.open("http://127.0.0.1:8080/", new=2)
     app.run()
 

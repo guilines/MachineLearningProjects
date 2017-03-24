@@ -31,7 +31,7 @@
 
 ### To get python dependences on ubuntu:
 
-sudo pip install web.py scikit-learn numpy scipy tensorflow keras sqlalchemy pysqlite yahoo-finance pandas simplejson matplotlib
+pip install web.py scikit-learn numpy scipy tensorflow keras sqlalchemy pysqlite yahoo-finance pandas simplejson matplotlib
 
 ### To get python dependences on MacOs:
 
@@ -41,4 +41,7 @@ Some of the commands listed before will work. But to install tensorflow follow t
 * $ cd app/
 * $ python app.py
 
-* Open your browser on: 127.0.0.1:8080 (localhost:8080) 
+* Open your browser on: 127.0.0.1:8080 (localhost:8080)
+
+## Obs:
+The JQWidgets are commited just to finish the project. They will be removed after it.

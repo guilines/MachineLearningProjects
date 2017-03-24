@@ -1,8 +1,4 @@
 body {
-/*    color: #3E3E3E;
-    background-color: #FBFFFF;
-	margin: 30px;
-	font-family: Verdana;*/
     font-family: 'Lato', Helvetica, sans-serif;
     font-size: 16px;
     background: #eee;
@@ -11,7 +7,6 @@ body {
     color: #222;
     overflow-x: hidden;
     overflow-y: auto;
-
 }
 
 		
@@ -27,18 +22,6 @@ body {
     width: 600px;
 }
 	
-/*	
-.button {
-    position: absolute;
-	top: 10%;
-	right: 10px;
-	font-family: Verdana;
-	font-weight: bold;
-	background-color:#FBFFF; 
-	border:1px solid; 
-	border-color: #696 #363 #363 #696; 
-}*/	
-
 h3 {
     margin-bottom: 5px;
     color: green;

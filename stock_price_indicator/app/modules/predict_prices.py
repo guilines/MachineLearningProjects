@@ -1,21 +1,28 @@
 import numpy as np
-import sqlite3
 import pandas as pd
 from pandas.tools.plotting import scatter_matrix
+import sqlite3
 from sqlalchemy import create_engine
 import scipy
 import matplotlib.pyplot as plt
-#import seaborn as sns
-from sklearn.metrics import r2_score
-from sklearn.model_selection import train_test_split
 
-from keras.models import Sequential
-from keras.layers import Dense
+#SKLEARN libs
+from sklearn.metrics import make_scorer, r2_score
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.cross_validation import ShuffleSplit
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestRegressor,GradientBoostingRegressor,AdaBoostRegressor 
+from sklearn.svm import SVR
+from sklearn.tree import DecisionTreeRegressor
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.neural_network import MLPRegressor
 
-#sns.set(color_codes=True)
+#KERAS libs
+from keras.models import Sequential
+from keras.layers import Dense
+
 np.random.seed(sum(map(ord, "distributions")))
 
 class PredStockPrices:
@@ -111,10 +118,8 @@ class PredStockPrices:
         pipelines to determine the best regressor'''
         self.method = 'SVR - Support Vector Regressor'
         X_train,X_test,y_train,y_test = self.split_data()
-    
+
         regressor = self._find_SVR_best_estimator(X_train, y_train)
-       # regressor = SVR(kernel='rbf',C=1e3,gamma=0.1) 
-        #regressor = regressor.fit(X_train, y_train)
         self.reg = regressor
 
     def deepL_model(self,X=None,y=None):
@@ -211,6 +216,12 @@ class PredStockPrices:
         return params
 
 
+#--------------------------------------------------------------------
+## Running code
+#The code below is used for debug and command-line execution. It is
+#not stable.
+#--------------------------------------------------------------------
+
 def get_df(symbol,initDate=None,finalDate=None):
     ''' Returns a data frame containing all stock values of a company
     in a period'''
@@ -258,20 +269,12 @@ def get_df(symbol,initDate=None,finalDate=None):
     return df
 
  
-from sklearn.metrics import make_scorer, r2_score
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.model_selection import GridSearchCV
-from sklearn.cross_validation import ShuffleSplit
 
 def evaluation_metric(y_true,y_predict):
     ''' Returns the performance score between
         true and predicted values, using r2_score'''
     return r2_score(y_true,y_predict)
 
-from sklearn.metrics import make_scorer, r2_score
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.model_selection import GridSearchCV
-from sklearn.cross_validation import ShuffleSplit
 
 
 def decisionTree_model(X, y):
@@ -299,9 +302,6 @@ def decisionTree_model(X, y):
     # Return the optimal model after fitting the data
     return grid.best_estimator_
 
-from sklearn.svm import SVR
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
 
 def svr_model(X, y):
 
@@ -320,7 +320,6 @@ def svr_model(X, y):
 
     return grid.best_estimator_
 
-from sklearn.ensemble import RandomForestRegressor,GradientBoostingRegressor,AdaBoostRegressor 
 def ensemble_model(X,y):
 
 
@@ -348,9 +347,6 @@ def PRED_TEST():
     y_pred = priceReg.predict(dates)
 
     return df
-
-
-
 
 if __name__ == '__main__':
 #    df = get_df('AAPL')

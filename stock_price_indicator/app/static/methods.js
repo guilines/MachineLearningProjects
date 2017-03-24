@@ -137,22 +137,6 @@ function createWidgets() {
     $("#select_method").jqxDropDownList({ source: method_source, 
                                     width: '200', 
                                     height: '25'});
-/*    var file = "file:file.txt"
-//    var file = ["company_symbol.txt"]
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function (){
-        if(rawFile.readyState === 4) {
-            if(rawFile.status === 200 || rawFile.status == 0){
-                var allText = rawFile.responseText;i
-                var symbol_source = allText.split(',');
-                //alert(allText);
-            }
-        }
-    }
-    rawFile.send(null);
-
-//    var symbol_source = ["company_symbol.txt"]*/
 
     $("#select_companyPeriod").jqxNumberInput({ 
         width: '100px', 
@@ -170,13 +154,13 @@ function createWidgets() {
     });
 
     var symbol_source = [
+        "NVS",
         "YHOO",
         "AAPL",
         "BBDO",
         "BSBR",
         "PBR",
         "BUD",
-        "NVS",
         "HSBC",
         "GOOGL",
         "MSFT",
