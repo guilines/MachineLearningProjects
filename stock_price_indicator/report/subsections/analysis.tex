@@ -58,7 +58,7 @@ The first step is to understand the dependency between the features. Plotting th
 \label{fig:features_correlation}
 \end{figure}
 \ \\
-Analyzing the Figure \ref{fig:nvs_correlation} and the Figure \ref{fig:nvs_scatter_matrix}, it is clear that all the features, except to the Volume, are all correlated. To this project,
+Analyzing the Figure \ref{fig:nvs_correlation} and the Figure \ref{fig:nvs_scatter_matrix}, it is clear that all the features, except to the Volume, are all correlated. For this project,
 this means that can be used just one of them to build the model. The Volume feature does not seems to help with the model, so this feature will be excluded.
 In the Figure \ref{fig:nvs_stock_results} three features are plot together, in order to understand their correlation.
 \begin{figure}[H]
@@ -96,7 +96,7 @@ the \textit{Pipeline} method, consuming 4 cores. The \textit{pipeline} is used t
 \subsection{Benchmark}
 \label{subsec:bench}
 The result can be easily evaluated, since it will be quantifiable and compared to the already existing value. Therefore, the evaluation of the success of the model can be done by comparing the final
-predicted value of the \emph{Adjusted Stock price} with the real one. The benchmark value, considering the $R^2 score$ (section \ref{sec:metrics}) to this project, that will be pursed initially will be of 0.5.
+predicted value of the \emph{Adjusted Stock price} with the real one. The benchmark value, considering the $R^2 score$ (section \ref{sec:metrics}) for this project, that will be pursed initially will be of 0.5.
 However, a value of 0.5 to predict stock prices does not seems to be reliable, since you cannot evaluate if the value of the stock is rising or decreasing over a period. 
 Therefore, a reliable benchmark value to achieve when finishing this project would be around 0.9. With this value, the client using this software can interpret the values and decide if it is
 a good scenario or not to keep/buy/sell stocks from this company.
